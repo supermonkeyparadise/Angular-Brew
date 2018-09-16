@@ -2,5 +2,5 @@
   "compilerOptions": {
     "target": "es5"
   },
-  "files": ["./main.ts"]
+  "files": ["./main.ts", "./point.ts"]
 }

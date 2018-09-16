@@ -10,7 +10,7 @@ export class Point {
     this._x = value;
   }
 
-  get X() {
+  get x() {
     return this._x;
   }
 }
