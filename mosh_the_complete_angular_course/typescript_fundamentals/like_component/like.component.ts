@@ -6,10 +6,12 @@ export class LikeComponent {
     this._isSelected = !this._isSelected;
   }
 
+  // read only
   get likesCount() {
     return this._likesCount;
   }
 
+  // read only
   get isSelected() {
     return this._isSelected;
   }
