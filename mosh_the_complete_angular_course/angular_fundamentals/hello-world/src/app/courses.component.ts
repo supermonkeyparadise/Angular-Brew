@@ -18,6 +18,7 @@ import { CoursesService } from './courses.service';
       (click)="onSave($event)">
       Save
     </button>
+    {{text|summary:3}}
   `
 })
 export class CoursesComponent {
@@ -26,6 +27,7 @@ export class CoursesComponent {
   courses;
   isActive = true;
   email = 'steven.chou@gmail.com';
+  text = 'ABCDEDFHIJK';
 
   // Dependency Injection
   constructor(service: CoursesService) {
