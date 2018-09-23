@@ -12,13 +12,17 @@ import { CoursesService } from './courses.service';
         {{course}}
       </li>
     </ul>
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" [class.active]="isActive"
+      [style.backgroundColor]="isActive?'blue':'white'">
+      Save
+    </button>
   `
 })
 export class CoursesComponent {
   title = 'List of courses';
   imageUrl = 'http://lorempixel.com/400/200';
   courses;
+  isActive = true;
 
   // Dependency Injection
   constructor(service: CoursesService) {
