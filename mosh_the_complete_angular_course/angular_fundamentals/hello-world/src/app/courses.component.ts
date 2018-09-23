@@ -12,8 +12,10 @@ import { CoursesService } from './courses.service';
         {{course}}
       </li>
     </ul>
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
     <button class="btn btn-primary" [class.active]="isActive"
-      [style.backgroundColor]="isActive?'blue':'white'">
+      [style.backgroundColor]="isActive?'blue':'white'"
+      (click)="onSave($event)">
       Save
     </button>
   `
@@ -23,6 +25,7 @@ export class CoursesComponent {
   imageUrl = 'http://lorempixel.com/400/200';
   courses;
   isActive = true;
+  email = 'steven.chou@gmail.com';
 
   // Dependency Injection
   constructor(service: CoursesService) {
@@ -31,5 +34,15 @@ export class CoursesComponent {
 
   getTitle() {
     return this.title;
+  }
+
+  onKeyUp() {
+    console.log('>>> email:', this.email);
+  }
+
+  onSave($event) {
+    // 防止事件往上傳遞
+    $event.stopPropagation();
+    console.log('>>> Button was clicked:', $event);
   }
 }
